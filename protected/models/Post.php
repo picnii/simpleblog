@@ -32,7 +32,8 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('subject, content, create_time, user_id', 'required'),
+			array('subject, content,  user_id', 'required'),
+			array('create_time', 'default'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('subject', 'length', 'max'=>200),
 			// The following rule is used by search().
