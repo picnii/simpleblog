@@ -51,9 +51,12 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$new_comment =new Comment;
+		$new_comment->user_id = Yii::app()->user->getId();
 		$this->layout='//layouts/column1';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'new_comment'=>$new_comment 
 		));
 	}
 
@@ -64,7 +67,7 @@ class PostController extends Controller
 	public function actionCreate()
 	{
 		$model=new Post;
-
+		$model->user_id = Yii::app()->user->getId();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -76,7 +79,7 @@ class PostController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model
 		));
 	}
 

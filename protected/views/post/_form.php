@@ -5,7 +5,7 @@
 ?>
 
 <div class="form">
-
+<?php //echo Yii::app()->user->getId(); ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'post-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -31,15 +31,11 @@
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_time'); ?>
-		<?php echo $form->textField($model,'create_time'); ?>
-		<?php echo $form->error($model,'create_time'); ?>
-	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
+		Creator : 
+		<?php echo $form->hiddenField($model,'user_id'); ?>
+		<?php echo Yii::app()->user->name; ?>
 		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
