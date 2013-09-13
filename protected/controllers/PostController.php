@@ -53,6 +53,15 @@ class PostController extends Controller
 	{
 		$new_comment =new Comment;
 		$new_comment->user_id = Yii::app()->user->getId();
+		$new_comment->post_id = $id;
+		if(isset($_POST['Comment']))
+		{
+			$save_comment = new Comment;
+			$save_comment->attributes=$_POST['Comment'];
+			//print_r($save_comment);
+			$save_comment->save();
+		}
+
 		$this->layout='//layouts/column1';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
