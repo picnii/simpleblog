@@ -23,7 +23,15 @@ class SiteController extends Controller
 
 	public function actionTest()
 	{
-		echo "Test Controller";
+		$data = array(1,2,3,4,5,6,7);
+		$users = User::model()->findAll();
+		$posts = Post::model()->findAll();
+		$this->render('test', array(
+				"data"=> $data,
+				"users"=> $users,
+				"posts"=> $posts
+			)
+		);
 	}
 
 
