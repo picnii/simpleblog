@@ -65,7 +65,7 @@ class Post extends CActiveRecord
 			'subject' => 'Subject',
 			'content' => 'Content',
 			'create_time' => 'Create Time',
-			'user_id' => 'User',
+			'user_id' => 'Creator',
 		);
 	}
 
