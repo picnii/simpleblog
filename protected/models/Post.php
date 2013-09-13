@@ -52,6 +52,7 @@ class Post extends CActiveRecord
 		return array(
 			'comments' => array(self::HAS_MANY, 'Comment', 'post_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'commentCount' => array(self::STAT, 'Comment', 'post_id'),
 		);
 	}
 

@@ -16,15 +16,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Post #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'subject',
-		'content',
-		'create_time',
-		'user_id',
-	),
-)); ?>
+<h1><?php echo $model->subject; ?></h1>
+<div class="body">
+	<?php echo $model->content; ?>
+</div>
+Create By : <?php echo $model->user->email; ?> 
+<h2>Comment</h2>
+<?php foreach ($model->comments as $comment) { ?>
+	<div class="comment">
+		<?php echo $comment->comment; ?>
+		<div class="by">
+			By. <?php echo $comment->user->email; ?>
+		</div>
+	</div>
+<?php } ?>

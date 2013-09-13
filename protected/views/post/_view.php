@@ -17,5 +17,5 @@
 	<?php echo CHtml::encode($data->user->email); ?>
 	<br />
 
-
+	<b>Comment <?php echo $data->commentCount; ?></b>
 </div>
